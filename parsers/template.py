@@ -6,12 +6,13 @@ COMMAND = 'template'
 
 
 def run(args: argparse.Namespace) -> None:
-    base_file = os.path.abspath(
-        os.path.join(__file__, '..', '..', 'templates', args.category, args.template + '.py'))
+    bash_path = os.path.abspath(
+        os.path.join(__file__, '..', '..', 'templates', args.category))
 
-    file_content = open(base_file, 'r').read()
-
-    print(file_content)
+    for file in os.listdir(bash_path):
+        if file.startswith(args.template+'.'):
+            with open(os.path.join(bash_path, file), 'r') as f:
+                print(f.read())
 
 
 def init(parser: argparse.ArgumentParser) -> None:
