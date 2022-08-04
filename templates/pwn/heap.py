@@ -37,7 +37,7 @@ def main(args: argparse.Namespace) -> None:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Buffer overflow pwn script')
+    parser = argparse.ArgumentParser(description='Heap pwn script')
     parser.add_argument('-r', '--remote', help='Remote host')
     parser.add_argument('-p', '--port', type=int, help='Remote port')
     parser.add_argument('-f', '--file', help='Local file')
